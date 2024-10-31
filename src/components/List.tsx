@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { getItems } from "../apiService";
-import Item from "../models/itemModel";
+import ItemModel from "../models/itemModel";
 import CreateItemForm from "./CreateItemForm";
+import Item from "./Item";
 
 interface ItemsProps {
-  items: Item[];
-  setItems: (x: (items: Item[]) => Item[]) => void;
+  items: ItemModel[];
+  setItems: (x: (items: ItemModel[]) => ItemModel[]) => void;
 }
 
 export const List: React.FC<ItemsProps> = ({ items, setItems }) => {
@@ -23,18 +24,11 @@ export const List: React.FC<ItemsProps> = ({ items, setItems }) => {
   }, [setItems]);
 
   return (
-    <div>
-      <h1>Military Operations Dashboard</h1>
-      <ul className="list">
+      <div className="list">
         {!items.length && <h1>No tasks for today</h1>}
         {items.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.status} - {item.priority}
-            <p>{item.description}</p>
-          </li>
+            <Item key={item._id} item={item} setItems={setItems} />
         ))}
-      </ul>
-      <CreateItemForm setItems={setItems} />
-    </div>
+      </div>
   );
 };
