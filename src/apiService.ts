@@ -1,6 +1,18 @@
 import Item from "./models/itemModel"
 
 const API_URL = `https://reactexambackend.onrender.com/missions/8649401`;
+export const getItems = async () => {
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    } catch (error) {
+      console.error('Error fetching items:', error);
+      throw error;
+    }
+  };
 
 export const createItem = async (item: Item) => {
     try {
