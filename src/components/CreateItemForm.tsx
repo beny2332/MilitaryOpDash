@@ -46,6 +46,7 @@ const CreateItemForm: React.FC<CreateItemFormProps> = ({ setItems }) => {
         onChange={(e) => setNewItemPriority(e.target.value as Priority)}
       >
         <option value={Priority.Low}>Low</option>
+        <option value={Priority.Medium}>Medium</option>
         <option value={Priority.High}>High</option>
       </select>
       <button onClick={handleCreate}>Add Item</button>
