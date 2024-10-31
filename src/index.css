@@ -105,6 +105,7 @@ h1, h3 {
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  flex: 1
 }
 
 .item button:hover {

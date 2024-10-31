@@ -65,8 +65,10 @@ export default function ItemComponent({ item, setItems }: Props) {
       <p>Status: {item.status}</p>
       <p>Priority: {item.priority}</p>
       <p>Description: {item.description}</p>
+      <div style={{ display: "flex", gap: "0.5em" }}>
       <button onClick={handleStatusUpdate}>Update Status</button>
       <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   )
 }
