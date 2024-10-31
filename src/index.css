@@ -25,14 +25,18 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 0.5em;
 }
 
 button {
@@ -45,6 +49,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 0.5em 0;
 }
 button:hover {
   border-color: #646cff;
@@ -52,6 +57,34 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input, select {
+  padding: 0.6em;
+  margin: 0.5em 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  background-color: #333;
+  padding: 1em;
+  margin: 0.5em 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list li p {
+  margin: 0.5em 0 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -64,5 +97,11 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+  input, select {
+    border: 1px solid #888;
+  }
+  .list li {
+    background-color: #f0f0f0;
   }
 }
